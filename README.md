@@ -1,6 +1,5 @@
 # RAG-API
 Created a RAG API using FastAPI, ChromaDB to store the knowledge base into embeddings, ollama tu run the llm locally and finally the uvicorn to perform APIs request and respond call more seamlessly. It answers the questions asked by generating them via inferring the knowledge base first for better results.
-<img src="https://cdn.prod.website-files.com/677c400686e724409a5a7409/6790ad949cf622dc8dcd9fe4_nextwork-logo-leather.svg" alt="NextWork" width="300" />
 
 # Build a RAG API with FastAPI
 
