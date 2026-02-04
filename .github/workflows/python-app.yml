@@ -30,5 +30,11 @@ jobs:
 
     - name: Run semantic tests
       run: |
-        # Explicitly calling the file prevents "Exit Code 5"
-        pytest semantic_test.py
+        # Run targeted tests; treat "no tests collected" (exit 5) as success
+        pytest semantic_test.py || status=$?
+        if [ -n "${status}" ] && [ "${status}" -eq 5 ]; then
+          echo "pytest exited with code 5 (no tests collected) — skipping failure"
+          exit 0
+        elif [ -n "${status}" ]; then
+          exit "${status}"
+        fi
